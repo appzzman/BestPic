@@ -14,6 +14,7 @@
 		8275E37319D2BF33008477E6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8275E37219D2BF33008477E6 /* Images.xcassets */; };
 		8275E37619D2BF33008477E6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8275E37419D2BF33008477E6 /* LaunchScreen.xib */; };
 		8275E38219D2BF34008477E6 /* BestPicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8275E38119D2BF34008477E6 /* BestPicTests.swift */; };
+		8275EA4019D2CF98008477E6 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8275EA3F19D2CF98008477E6 /* FacebookSDK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,8 @@
 		8275E37B19D2BF34008477E6 /* BestPicTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BestPicTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8275E38019D2BF34008477E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8275E38119D2BF34008477E6 /* BestPicTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestPicTests.swift; sourceTree = "<group>"; };
+		8275EA2419D2C3DB008477E6 /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Bridging-Header.h"; path = "BestPic/Bridging-Header.h"; sourceTree = "<group>"; };
+		8275EA3F19D2CF98008477E6 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8275EA4019D2CF98008477E6 /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +65,8 @@
 		8275E35A19D2BF33008477E6 = {
 			isa = PBXGroup;
 			children = (
+				8275EA4119D2CFA6008477E6 /* Frameworks */,
+				8275EA2419D2C3DB008477E6 /* Bridging-Header.h */,
 				8275E36519D2BF33008477E6 /* BestPic */,
 				8275E37E19D2BF34008477E6 /* BestPicTests */,
 				8275E36419D2BF33008477E6 /* Products */,
@@ -113,6 +119,14 @@
 				8275E38019D2BF34008477E6 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8275EA4119D2CFA6008477E6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8275EA3F19D2CF98008477E6 /* FacebookSDK.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -178,6 +192,7 @@
 			knownRegions = (
 				en,
 				Base,
+				he,
 			);
 			mainGroup = 8275E35A19D2BF33008477E6;
 			productRefGroup = 8275E36419D2BF33008477E6 /* Products */;
@@ -340,9 +355,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/BestPic/FacebookSDK",
+					"$(PROJECT_DIR)/BestPic/FacebookSDK/FBAudienceNetwork",
+					"$(PROJECT_DIR)/FacebookSDK",
+					"$(PROJECT_DIR)/FacebookSDK/FBAudienceNetwork",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = BestPic/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "BestPic/Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -350,9 +374,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/BestPic/FacebookSDK",
+					"$(PROJECT_DIR)/BestPic/FacebookSDK/FBAudienceNetwork",
+					"$(PROJECT_DIR)/FacebookSDK",
+					"$(PROJECT_DIR)/FacebookSDK/FBAudienceNetwork",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = BestPic/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "BestPic/Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -363,6 +396,8 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(PROJECT_DIR)/FacebookSDK",
+					"$(PROJECT_DIR)/FacebookSDK/FBAudienceNetwork",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -382,6 +417,8 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(PROJECT_DIR)/FacebookSDK",
+					"$(PROJECT_DIR)/FacebookSDK/FBAudienceNetwork",
 				);
 				INFOPLIST_FILE = BestPicTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -409,6 +446,7 @@
 				8275E38719D2BF34008477E6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8275E38819D2BF34008477E6 /* Build configuration list for PBXNativeTarget "BestPicTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +455,7 @@
 				8275E38A19D2BF34008477E6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
